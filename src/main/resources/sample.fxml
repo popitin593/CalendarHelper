@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="683.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+    <children>
+        <MenuBar VBox.vgrow="NEVER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="New" />
+                        <MenuItem mnemonicParsing="false" text="Open…" />
+                        <Menu mnemonicParsing="false" text="Open Recent" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                        <MenuItem mnemonicParsing="false" text="Save" />
+                        <MenuItem mnemonicParsing="false" text="Save As…" />
+                        <MenuItem mnemonicParsing="false" text="Revert" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Preferences…" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Quit" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Undo" />
+                        <MenuItem mnemonicParsing="false" text="Redo" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Cut" />
+                        <MenuItem mnemonicParsing="false" text="Copy" />
+                        <MenuItem mnemonicParsing="false" text="Paste" />
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Select All" />
+                        <MenuItem mnemonicParsing="false" text="Unselect All" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <AnchorPane accessibleRole="CHECK_BOX" prefHeight="682.0" prefWidth="747.0" VBox.vgrow="ALWAYS">
+            <children>
+                <TextField fx:id="text_year" layoutX="137.0" layoutY="22.0" onAction="#map_show" prefHeight="27.0" prefWidth="150.0" />
+                <Label alignment="CENTER" layoutX="51.0" layoutY="27.0" prefHeight="17.0" prefWidth="73.0" text="year" />
+                <ChoiceBox fx:id="box_month" layoutX="442.0" layoutY="20.0" onAction="#map_show" prefHeight="27.0" prefWidth="143.0" />
+                <Label alignment="CENTER" layoutX="360.0" layoutY="26.0" prefHeight="17.0" prefWidth="73.0" text="month" />
+                <TableView fx:id="table" layoutX="75.0" layoutY="59.0" prefHeight="231.0" prefWidth="573.0">
+                    <columns>
+                        <TableColumn id="SUNDAY" text="Sunday" />
+                        <TableColumn id="MONDAY" text="Monday" />
+                        <TableColumn id="TUESDAY" text="Tuesday" />
+                        <TableColumn id="WEDNESDAY" text="Wednesday" />
+                        <TableColumn id="THURSDAY" text="Thursday" />
+                        <TableColumn id="FRIDAY" text="Friday" />
+                        <TableColumn id="SATURDAY" text="Saturday" />
+                    </columns>
+                </TableView>
+                <ButtonBar buttonMinWidth="55.0" layoutX="17.0" layoutY="309.0" prefHeight="18.0" prefWidth="698.0">
+                    <buttons>
+                        <RadioButton fx:id="radio_sun" contentDisplay="CENTER" mnemonicParsing="false" onAction="#text_show" text="Sunday" />
+                        <RadioButton fx:id="radio_mon" contentDisplay="CENTER" mnemonicParsing="false" onAction="#text_show" text="Monday" />
+                        <RadioButton fx:id="radio_tues" contentDisplay="CENTER" mnemonicParsing="false" onAction="#text_show" text="Tuesday" />
+                        <RadioButton fx:id="radio_wed" contentDisplay="CENTER" mnemonicParsing="false" onAction="#text_show" prefHeight="18.0" text="Wednesday" />
+                        <RadioButton fx:id="radio_thur" contentDisplay="CENTER" mnemonicParsing="false" onAction="#text_show" text="Thursday" />
+                        <RadioButton fx:id="radio_fri" contentDisplay="CENTER" mnemonicParsing="false" onAction="#text_show" text="Friday" />
+                        <RadioButton fx:id="radio_sat" contentDisplay="CENTER" mnemonicParsing="false" onAction="#text_show" prefHeight="18.0" prefWidth="109.0" text="Saturday" />
+                    </buttons>
+                </ButtonBar>
+                <Label alignment="CENTER" layoutX="9.0" layoutY="363.0" prefHeight="17.0" prefWidth="61.0" text="begin" />
+                <Label alignment="CENTER" layoutX="166.0" layoutY="364.0" prefHeight="17.0" prefWidth="52.0" text="end" />
+                <ChoiceBox fx:id="label_begin" layoutX="79.0" layoutY="358.0" onAction="#text_show" prefHeight="27.0" prefWidth="81.0" />
+                <ChoiceBox fx:id="label_end" layoutX="228.0" layoutY="357.0" onAction="#text_show" prefHeight="27.0" prefWidth="81.0" />
+
+                <TextArea fx:id="text_weeks" layoutX="65.0" layoutY="413.0" prefHeight="188.0" prefWidth="607.0" />
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="334.0" layoutY="364.0" prefHeight="17.0" prefWidth="61.0" text="subject" />
+                <Label alignment="CENTER" layoutX="534.0" layoutY="364.0" prefHeight="17.0" prefWidth="61.0" text="teacher" />
+                <TextField fx:id="text_student" layoutX="606.0" layoutY="359.0" onAction="#text_show" prefHeight="27.0" prefWidth="105.0" />
+                <ChoiceBox fx:id="box_subject" layoutX="409.0" layoutY="357.0" onAction="#text_show" prefHeight="27.0" prefWidth="114.0" />
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>
